@@ -26,8 +26,11 @@ public class SongService implements SongRepository {
         playlist.put(5, new Song(5, "Nenjame", "Panchu Arunachalam", "S.P.Balasubrahmanyam", "Ilaiyaraaja"));
     }
 
-    // Don't modify the above code
-
-    // Write your code here
+    @Override
+    public ArrayList<Song> getSongs() {
+        Collection<Song> songsCollection = playlist.values();
+        ArrayList<Song> songs = new ArrayList<>(songsCollection);
+        return songs;
+    }
 
 }

@@ -1,13 +1,13 @@
 package com.example.song;
 
-public class Song{
+public class Song {
     private int songId;
     private String songName;
     private String lyricist;
     private String singer;
     private String musicDirector;
 
-    public Song(int songId, String songName, String lyricist, String singer, String musicDirector){
+    public Song(int songId, String songName, String lyricist, String singer, String musicDirector) {
         this.songId = songId;
         this.songName = songName;
         this.lyricist = lyricist;
@@ -15,36 +15,44 @@ public class Song{
         this.musicDirector = musicDirector;
     }
 
-    public int getSongId(){
+    public int getSongId() {
         return songId;
     }
-    public void setSongId(int songId){
+
+    public void setSongId(int songId) {
         this.songId = songId;
     }
-    public String getSongName(){
+
+    public String getSongName() {
         return songName;
     }
-    public void setSongName(String songName){
+
+    public void setSongName(String songName) {
         this.songName = songName;
     }
-    public String getLyricist(){
+
+    public String getLyricist() {
         return lyricist;
     }
-    public void setLyricist(String lyricist){
+
+    public void setLyricist(String lyricist) {
         this.lyricist = lyricist;
     }
-    public String getSinger(){
+
+    public String getSinger() {
         return singer;
     }
-    public void setSinger(String singer){
+
+    public void setSinger(String singer) {
         this.singer = singer;
     }
-    public String getMusicDirector(){
+
+    public String getMusicDirector() {
         return musicDirector;
     }
-    public void setMusicDirector(String musicDirector){
+
+    public void setMusicDirector(String musicDirector) {
         this.musicDirector = musicDirector;
     }
-    
 
 }
