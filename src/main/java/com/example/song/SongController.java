@@ -22,6 +22,11 @@ public class SongController {
     @PostMapping("/songs")
     public Song addNewSong(@RequestBody Song song) {
         return songService.addNewSong(song);
+    }
+
+    @PutMapping("/songs/{songId}")
+    public Song updateSong(@PathVariable("songId") int songId, @RequestBody Song song) {
+        return songService.updateSong(songId, song);
 
     }
 

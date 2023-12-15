@@ -55,4 +55,27 @@ public class SongService implements SongRepository {
 
     }
 
+    @Override
+    public Song updateSong(int songId, Song song) {
+        Song existingSong = playlist.get(songId);
+        if (existingSong == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        if (song.getSongName() != null) {
+            existingSong.setSongName(song.getSongName());
+        }
+        if (song.getLyricist() != null) {
+            existingSong.setLyricist(song.getLyricist());
+        }
+        if (song.getSinger() != null) {
+            existingSong.setSinger(song.getSinger());
+        }
+        if (song.getMusicDirector() != null) {
+            existingSong.setMusicDirector(song.getMusicDirector());
+        }
+
+        return existingSong;
+
+    }
+
 }
