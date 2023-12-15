@@ -13,4 +13,6 @@ public interface SongRepository {
 
     Song updateSong(int songId, Song song);
 
+    void deleteSong(int songId);
+
 }
