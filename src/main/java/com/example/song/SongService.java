@@ -14,6 +14,9 @@ import java.util.*;
 import com.example.song.Song;
 import com.example.song.SongRepository;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+
 // Don't modify the below code
 public class SongService implements SongRepository {
     private static HashMap<Integer, Song> playlist = new HashMap<>();
@@ -31,6 +34,15 @@ public class SongService implements SongRepository {
         Collection<Song> songsCollection = playlist.values();
         ArrayList<Song> songs = new ArrayList<>(songsCollection);
         return songs;
+    }
+
+    @Override
+    public Song getSongById(int songId){
+        Song song = playlist.get(songId);
+        if (song == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return song;
     }
 
 }

@@ -13,4 +13,10 @@ public class SongController {
         return songService.getSongs();
     }
 
+    @GetMapping("/songs/{songId}")
+    public Song getSongById(@PathVariable("songId") int songId){
+        return songService.getSongById(songId);
+        
+    }
+
 }
