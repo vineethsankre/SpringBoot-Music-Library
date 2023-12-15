@@ -14,9 +14,15 @@ public class SongController {
     }
 
     @GetMapping("/songs/{songId}")
-    public Song getSongById(@PathVariable("songId") int songId){
+    public Song getSongById(@PathVariable("songId") int songId) {
         return songService.getSongById(songId);
-        
+
+    }
+
+    @PostMapping("/songs")
+    public Song addNewSong(@RequestBody Song song) {
+        return songService.addNewSong(song);
+
     }
 
 }

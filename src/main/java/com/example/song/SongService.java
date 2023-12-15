@@ -20,6 +20,7 @@ import org.springframework.web.server.ResponseStatusException;
 // Don't modify the below code
 public class SongService implements SongRepository {
     private static HashMap<Integer, Song> playlist = new HashMap<>();
+    int uniqueId = 6;
 
     public SongService() {
         playlist.put(1, new Song(1, "Butta Bomma", "Ramajogayya Sastry", "Armaan Malik", "Thaman S"));
@@ -37,12 +38,21 @@ public class SongService implements SongRepository {
     }
 
     @Override
-    public Song getSongById(int songId){
+    public Song getSongById(int songId) {
         Song song = playlist.get(songId);
-        if (song == null){
+        if (song == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
         return song;
+    }
+
+    @Override
+    public Song addNewSong(Song song) {
+        song.setSongId(uniqueId);
+        playlist.put(uniqueId, song);
+        uniqueId += 1;
+        return song;
+
     }
 
 }
